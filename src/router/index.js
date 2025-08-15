@@ -13,8 +13,7 @@ const router = createRouter(
 		{
 			path: '/settings',
 			name: 'Bildirim Ayarları',
-			component: () => import('../views/settings.vue'),
-      alias: '/home'
+			//component: () => import('../views/settings-menu.vue')
     },
 		{
 			path: '/about',
