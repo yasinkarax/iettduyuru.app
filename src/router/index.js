@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import announcements from '../views/announcements.vue'
+import home from '../views/home.vue'
 
 const router = createRouter(
   {
@@ -7,8 +7,8 @@ const router = createRouter(
 	routes: [
 		{
 			path: '/',
-			name: 'announcements',
-			component: announcements
+			name: 'home',
+			component: home
     },
 		{
 			path: '/settings',
