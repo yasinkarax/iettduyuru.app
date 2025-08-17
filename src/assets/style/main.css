@@ -4,7 +4,7 @@
 }
 body{
   overflow-wrap: anywhere;
-  background: #162139;
+  background:#162139;
 }
 .container{
   display: flex;

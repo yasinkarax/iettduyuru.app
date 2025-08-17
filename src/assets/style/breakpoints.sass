@@ -1,0 +1,10 @@
+//screen types
+$mobile: 480px
+$tablet: 576px
+$laptop: 768px
+
+
+//change styles respond to screen
+=changeStyle($breakPoint)
+  @media (min-width: $breakPoint)
+    @content
