@@ -1,13 +1,10 @@
 <template>
- <div class="app">
-  <settingsMenu/>
+ <settingsMenu/>
 
   <main role="main" aria-label="Ana içerik">
     <RouterView></RouterView>
 
   </main>
-
- </div>
 </template>
 <script>
 import settingsMenu from '@/components/settings-menu.vue'
