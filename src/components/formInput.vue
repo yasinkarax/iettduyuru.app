@@ -2,7 +2,6 @@
   <input
     :type="type"
     :placeholder="placeholder"
-    v-model="formInput"
     @input="$emit('inputValue', $event.target.value)"
   >
 </template>
