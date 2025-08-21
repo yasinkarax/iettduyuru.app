@@ -8,7 +8,7 @@
  </div>
 </template>
 <script>
-import searchForm from '@/components/searchForm.vue'
+import searchForm from '@/components/form/searchForm.vue'
 import announcement from '@/components/announcement.vue'
 
  export default {
