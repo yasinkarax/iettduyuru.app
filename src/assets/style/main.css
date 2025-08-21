@@ -18,6 +18,7 @@ body{
 #app{
   padding: 6.25rem 0;
   max-width: 700px;
+  min-width: 480px;
   position: relative;
 }
 /*# sourceMappingURL=main.css.map */
