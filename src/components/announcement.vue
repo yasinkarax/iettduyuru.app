@@ -27,7 +27,8 @@ export default {
   padding: 29px 13px
 
 #busId
- padding: 28px 9px
+ min-width: 85px
+ aspect-ratio: 1/1
  display: flex
  white-space: nowrap
  justify-content: center
