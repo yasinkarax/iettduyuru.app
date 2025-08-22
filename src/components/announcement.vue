@@ -37,10 +37,10 @@ export default {
  color: #000
  text-transform: uppercase
  font-family: "SF Pro Text"
- font-size: 1.5rem
+ font-size: $fontSizeHead
 
 #busAnno
-  font-size: 20px
+  font-size: $fontSizeContent
   font-family: $fontFamily
   color: #fff
   text-align: center
