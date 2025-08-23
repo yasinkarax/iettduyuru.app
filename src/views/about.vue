@@ -27,10 +27,8 @@
   #about-head
     padding: 68px 0 20px 0
     font-size: $fontSizeHead
-    font-family: $fontFamily
   #about-content
     font-size: $fontSizeContent
-    font-family: $fontFamilyP
 
 #about-links
   margin: 35px 0 0 0
@@ -42,7 +40,6 @@
     gap: 5px
     color: $color
     font-size: $fontSizeContent
-    font-family: $fontFamily
   svg
     fill: #fff
     width: 35px

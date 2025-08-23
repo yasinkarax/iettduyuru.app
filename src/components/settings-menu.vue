@@ -135,7 +135,6 @@ export default {
   a
     color: $menuText
     text-decoration: none
-    font-family: $menuFont
     font-size: $menuFontSize
     font-weight: 500
 
