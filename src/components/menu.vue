@@ -21,9 +21,6 @@
         <RouterLink to='/' aria-label="Ana sayfaya git">
           <li>Ana Sayfa</li>
         </RouterLink>
-        <RouterLink to='/settings' aria-label="Bildirim Ayarları sayfasına git">
-          <li>Bildirim Ayarları</li>
-        </RouterLink>
         <RouterLink to='/about' aria-label="Uygulama Hakkında sayfasına git">
           <li>Uygulama Hakkında</li>
         </RouterLink>
@@ -37,6 +34,7 @@ export default {
   data() {
     return {
       visibility: false,
+      subMenu: false
     }
   },
   methods: {
@@ -48,6 +46,9 @@ export default {
       if (!event.target === button || !button.contains(event.target))
         this.visibility = false;
     },
+    subMenu() {
+
+    }
   },
   mounted() {
     document.addEventListener('click', this.closeMenu);
@@ -118,7 +119,11 @@ export default {
     flex-direction: column
     gap: 4px
 
-  li
+  button
+    border: none
+    outline: none
+    background: none
+  li, button
     //background: $menuLinkBg
     display: flex
     padding: 4px 3px
@@ -127,9 +132,13 @@ export default {
     gap: 10px
     transition: .1s
     border-radius: 5px
+    color: $menuText
+    font-size: $menuFontSize
+    font-weight: 500
     &:hover
       background: $menuLiHover
       scale: 1.06
+      cursor: pointer
     &:active
       scale: 1
   a

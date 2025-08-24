@@ -1,16 +1,16 @@
 <template>
- <settingsMenu/>
+  <mainMenu/>
   <logo/>
   <main role="main" aria-label="Ana içerik">
     <RouterView></RouterView>
   </main>
 </template>
 <script>
-import settingsMenu from '@/components/settings-menu.vue'
+import mainMenu from '@/components/menu.vue'
 import logo from '@/components/logo.vue'
 export default {
   components: {
-    settingsMenu,
+    mainMenu,
     logo,
   }
 }

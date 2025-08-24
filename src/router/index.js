@@ -11,11 +11,6 @@ const router = createRouter(
 			component: home
     },
 		{
-			path: '/settings',
-			name: 'Bildirim Ayarları',
-			//component: () => import('../views/settings-menu.vue')
-    },
-		{
 			path: '/about',
 			name: 'Uygulama Hakkında',
 			component: () => import('../views/about.vue')
