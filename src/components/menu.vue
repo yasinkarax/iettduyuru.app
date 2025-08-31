@@ -45,9 +45,6 @@ export default {
       const button = this.$refs.menu;
       if (!event.target === button || !button.contains(event.target))
         this.visibility = false;
-    },
-    subMenu() {
-
     }
   },
   mounted() {
