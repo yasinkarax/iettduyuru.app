@@ -5,13 +5,18 @@
     </div>
     <div id="about-content">
       <p>
-        This application is currently under development as an alternative to İBB's
-        <a class='link-text' href='https://play.google.com/store/apps/details?id=com.iett.otobusumnerede&hl=tr&pli=1'
-          target='_blank'>'Otobüsüm Nerede'</a> app. It delivers
-        real-time announcements — such as delays, detours, or service interruptions — for the bus line you subscribe to,
-        or for all lines if selected.Unlike the original app, it sends these announcements directly to you without
-        requiring you to open the app.
+        This application is currently under development as an alternative to IBB's
+        <a class="link-text" href="https://play.google.com/store/apps/details?id=com.iett.otobusumnerede&hl=tr&pli=1"
+          target="_blank">
+          Otobüsüm Nerede
+        </a>
+        app. It delivers real-time announcements — such as delays, detours, or service interruptions — for the bus line
+        you
+        subscribe to, or for all lines if selected. Unlike the official app, it sends these announcements directly to
+        the user
+        without requiring them to open the app.
       </p>
+
     </div>
     <div id="about-links">
       <a href="https://github.com/yasinkarax/iettduyuru.app" target="_blank" rel="noopener noreferrer"
