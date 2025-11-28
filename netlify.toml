@@ -1,0 +1,11 @@
+[build]
+  # Tell Netlify to build from the frontend folder
+  base = "frontend"
+  # Build command
+  command = "npm run build"
+  # Where the built files are
+  publish = "frontend/dist"
+
+[build.environment]
+  # Node version
+  NODE_VERSION = "18"
