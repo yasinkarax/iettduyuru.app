@@ -3,9 +3,9 @@
   base = "frontend"
   # Build command
   command = "npm run build"
-  # Where the built files are
-  publish = "frontend/dist"
+  # Where the built files are (FIXED - was frontend/frontend/dist)
+  publish = "dist"
 
 [build.environment]
-  # Node version
-  NODE_VERSION = "18"
+  # Upgrade Node.js to version 20
+  NODE_VERSION = "20"
