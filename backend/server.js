@@ -11,12 +11,25 @@ app.use(express.json());
 
 app.get('/api/announcements', async (req, res) => {
   try {
-    const soap = `<?xml version="1.0" encoding="utf-8"?>
-    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-      <soap:Body>
-        <GetDuyurular_json xmlns="http://tempuri.org/" />
-      </soap:Body>
-    </soap:Envelope>`;
+    const hatKodu = req.query.hatKodu; 
+    let soap;
+    if (hatKodu) {
+      soap = `<?xml version="1.0" encoding="utf-8"?>
+      <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+        <soap:Body>
+          <GetDuyurular_json xmlns="http://tempuri.org/">
+            <HatKodu>${hatKodu}</HatKodu>
+          </GetDuyurular_json>
+        </soap:Body>
+      </soap:Envelope>`;
+    } else {
+      soap = `<?xml version="1.0" encoding="utf-8"?>
+      <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+        <soap:Body>
+          <GetDuyurular_json xmlns="http://tempuri.org/" />
+        </soap:Body>
+      </soap:Envelope>`;
+    }
 
     const response = await fetch('https://api.ibb.gov.tr/iett/UlasimDinamikVeri/Duyurular.asmx',
       {
@@ -38,6 +51,7 @@ app.get('/api/announcements', async (req, res) => {
 
     if (textJSON && textJSON[1]) {
       const data = JSON.parse(textJSON[1]);
+      console.log('Fetched announcements data:', data);
       res.json({
         success: true,
         data: data

@@ -1,18 +1,25 @@
+
 <template>
   <div id="announcement">
     <div id="busId"><span>{{ busId }}</span></div>
     <div id="busAnno">
-      {{ busAnno }}
+      {{ busAnnouncement }}
     </div>
   </div>
 </template>
 <script>
 export default {
   name: 'announcement',
-  data() {
-    return {
-      busId: '89km',
-      busAnno: "'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into ele"
+  props: {
+    busId: {
+      type: String,
+      default: 'Hat kodu',
+      required: true
+    },
+    busAnnouncement: {
+      type: String,
+      default: 'Hat duyuru',
+      required: true
     }
   }
 }
@@ -32,10 +39,11 @@ export default {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4)
 
 #busId
- min-width: 85px
+ width: 110px
  aspect-ratio: 1/1
+ flex-shrink: 0
  display: flex
- white-space: nowrap
+ text-align: center
  justify-content: center
  align-items: center
  border-radius: 50%
@@ -43,6 +51,8 @@ export default {
  color: #000
  text-transform: uppercase
  font-size: $fontSizeHead
+ overflow: hidden
+ padding: 5px
 
 #busAnno
   font-size: $fontSizeContent
