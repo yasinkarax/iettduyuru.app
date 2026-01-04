@@ -4,8 +4,9 @@
     <span>{{buttonText}}</span>
   </button>
 </template>
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue'
+export default defineComponent({
   name: 'SearchButton',
   data() {
     return {
@@ -22,8 +23,9 @@ export default {
       type: String,
       default: 'primary'
     }
-  }
-}
+  },
+  emits: ['searchBus']
+})
 </script>
 <style lang="sass" scoped>
 /**sass imports */

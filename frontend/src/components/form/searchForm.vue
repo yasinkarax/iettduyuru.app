@@ -17,35 +17,40 @@
     </form>
   </div>
 </template>
-<script>
+<script lang="ts">
+import {defineComponent} from 'vue'
 import formInput from '@/components/form/formInput.vue'
 import formButton from '@/components/form/button.vue'
-export default {
+export default defineComponent({
   data() {
     return {
-      inputPlaceholder: 'Otobüs hattı ara',
-      buttonText1: 'Otobüsün duyurularını al',
-      buttonText2: 'Tüm duyuruları al',
-      lineNumber: '' 
+      inputPlaceholder: 'Otobüs hattı ara' as string,
+      buttonText1: 'Otobüsün duyurularını al' as string,
+      buttonText2: 'Tüm duyuruları al' as string,
+      lineNumber: '' as string
     }
   },
   components: {
     formInput,
     formButton
   },
+  emits: ['search-announcements'],
   methods: {
-    handleLineNumberSearch() {
+    updateLineNumber(value: string){
+      this.lineNumber = value;
+    },
+    handleLineNumberSearch(): void{
       this.$emit('search-announcements', this.lineNumber);
     },
-    handleAllAnnouncements() {
+    handleAllAnnouncements(): void {
       this.$emit('search-announcements', null);
       this.lineNumber = ''; // Clear the input
     },
-    handleSearch() {
+    handleSearch(): void {
       this.handleLineNumberSearch();
     }
   }
-}
+})
 </script>
 <style lang="sass" scoped>
 #formContainer

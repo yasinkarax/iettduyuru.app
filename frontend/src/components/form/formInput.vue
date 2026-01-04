@@ -3,11 +3,12 @@
     id="formInput"
     :type="type"
     :placeholder="placeholder"
-    @input="$emit('inputValue', $event.target.value)"
+    @input="$emit('inputValue', ($event.target as HTMLInputElement).value)"
   >
 </template>
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue'
+export default defineComponent({
   name: 'formInput',
   props: {
     type: {
@@ -18,8 +19,9 @@ export default {
       type: String,
       default: 'Hat ara'
     },
-  }
-}
+  },
+  emits: ['inputValue']
+})
 </script>
 <style lang='sass' scoped>
 /**sass imports */

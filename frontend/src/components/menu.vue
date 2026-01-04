@@ -28,32 +28,36 @@
     </nav>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue';
+
+export default defineComponent({
   name: 'settings-menu',
   data() {
     return {
-      visibility: false,
-      subMenu: false
+      visibility: false as boolean,
+      subMenu: false as boolean
     }
   },
   methods: {
-    toggleMenu() {
+    toggleMenu(): void{
       this.visibility = !this.visibility;
     },
-    closeMenu(event) {
-      const button = this.$refs.menu;
-      if (!event.target === button || !button.contains(event.target))
+    closeMenu(event: MouseEvent): void {
+      const button = this.$refs.menu as HTMLElement;
+      const target = event.target as Node;
+      if (button && target && !button.contains(target)) {
         this.visibility = false;
+      }
     }
   },
-  mounted() {
+  mounted(): void{
     document.addEventListener('click', this.closeMenu);
   },
-  beforeUnmount() {
+  beforeUnmount(): void {
     document.removeEventListener('click', this.closeMenu)
   }
-}
+})
 </script>
 <style lang="sass" scoped>
 @use '@/assets/style/_variables.sass' as *

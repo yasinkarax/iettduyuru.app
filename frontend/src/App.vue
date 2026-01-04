@@ -6,18 +6,19 @@
     <RouterView></RouterView>
   </main>
 </template>
-<script>
+<script lang="ts">
+import {defineComponent} from 'vue';
 import mainMenu from '@/components/menu.vue'
 import logo from '@/components/logo.vue'
 import settings from '@/components/settings.vue'
 
-export default {
+export default defineComponent({
   components: {
     mainMenu,
     logo,
     settings
   }
-}
+})
 </script>
 <style scoped>
 

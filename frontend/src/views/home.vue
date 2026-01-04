@@ -3,15 +3,27 @@
   <div id="announcement">
     <Announcement v-for="(item, index) in announcements" 
     :key="index" 
-    :busId="item.HATKODU"
-    :busAnnouncement="item.MESAJ" />
+    :busId="item.hatKodu"
+    :busAnnouncement="item.mesaj" />
   </div>
 </template>
-<script>
+<script lang="ts">
+import {defineComponent} from 'vue'
 import SearchForm from '@/components/form/searchForm.vue'
 import Announcement from '@/components/announcement.vue'
 
-export default {
+interface AnnouncementData {
+    hatKodu: string
+    mesaj: string
+  }
+
+  interface ApiResponse {
+    success: boolean;
+    data?: AnnouncementData[];
+    message?: string;
+}
+
+export default defineComponent({
   name: 'Home',
   components: {
     SearchForm,
@@ -19,12 +31,12 @@ export default {
   },
   data() {
     return {
-      announcements: [],
-      error: ''
+      announcements: [] as AnnouncementData[],
+      error: '' as string
     }
   },
   methods: {
-    async fetchAnnouncements(hatKodu = null) {
+    async fetchAnnouncements(hatKodu: string | null = null): Promise<void> {
       try {
         let url = 'http://localhost:3000/api/announcements';
         
@@ -33,11 +45,11 @@ export default {
         }
         
         const response = await fetch(url);
-        const result = await response.json();
+        const result = await response.json() as ApiResponse;
 
         if (result.success) {
           console.log('Announcements received:', result.data);
-          this.announcements = result.data;
+          this.announcements = result.data || [];
         } else {
           console.error('API returned error:', result.message);
           this.error = result.message || 'Duruyular alınamadı';
@@ -47,7 +59,7 @@ export default {
         this.error = 'Duruyular yüklenirken bir hata oluştu';
       }
     },
-    searchByLineNumber(lineNumber) {
+    searchByLineNumber(lineNumber: string): void {
       if (lineNumber) {
         this.fetchAnnouncements(lineNumber);
       } else {
@@ -55,9 +67,9 @@ export default {
       }
     }
   },
-  mounted(){
+  mounted(): void{
     this.fetchAnnouncements();
   } 
-}
+})
 </script>
 <style scoped></style>

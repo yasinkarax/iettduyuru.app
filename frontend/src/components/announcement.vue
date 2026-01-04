@@ -7,8 +7,9 @@
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue';
+export default defineComponent({
   name: 'announcement',
   props: {
     busId: {
@@ -22,7 +23,7 @@ export default {
       required: true
     }
   }
-}
+})
 </script>
 <style scoped lang="sass">
 @use '@/assets/style/_variables' as *

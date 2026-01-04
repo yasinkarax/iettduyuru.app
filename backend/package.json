@@ -1,14 +1,23 @@
-{
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "Backend server for iettduyuru.app",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
-  },
-  "dependencies": {
-    "express": "^4.21.1",
-    "cors": "^2.8.5"
-  }
+{ 
+ "name": "backend",
+ "version": "1.0.0",
+ "description": "backend server for iettduyuru.app",
+ "main": "dist/server.js",
+ "scripts": {
+  "start": "node dist/server.js",
+  "dev": "tsx watch src/server.ts",
+  "build": "tsc",
+  "type-check": "tsc --noEmit"
+ },
+ "dependencies": {
+  "cors": "^2.8.5",
+  "express": "^4.21.1"
+ },
+ "devDependencies": {
+  "@types/cors": "^2.8.19",
+  "@types/express": "^5.0.6",
+  "@types/node": "^25.0.2",
+  "tsx": "^4.21.0",
+  "typescript": "^5.9.3"
+ }
 }

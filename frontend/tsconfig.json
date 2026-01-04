@@ -1,0 +1,22 @@
+{
+ "compilerOptions": {
+  "target": "es2020",
+  "module": "esnext",
+  "lib": ["ES2020", "DOM", "DOM.Iterable"],
+  "types": ["vite/client"],
+  "moduleResolution": "bundler",
+  "baseUrl": ".",
+  "paths": {
+   "@/t*": ["./src/*"]
+  },
+  "strict": true,
+  "noImplicitAny": true,
+  "strictNullChecks": true,
+  "jsx": "preserve",
+  "resolveJsonModule": true,
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true
+ },
+ "include": ["src/**/*.ts", "src/**/*.vue"],
+ "exclude": ["node_modules", "dist"]
+}
