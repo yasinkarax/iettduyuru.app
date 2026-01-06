@@ -1,25 +1,16 @@
 <template>
-  <settings/>
-  <mainMenu/>
-  <logo/>
-  <main role="main" aria-label="Ana içerik">
-    <RouterView></RouterView>
-  </main>
+  <RouterView />
 </template>
-<script lang="ts">
-import {defineComponent} from 'vue';
-import mainMenu from '@/components/menu.vue'
-import logo from '@/components/logo.vue'
-import settings from '@/components/settings.vue'
 
-export default defineComponent({
-  components: {
-    mainMenu,
-    logo,
-    settings
-  }
-})
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
 </script>
-<style scoped>
 
+<style>
+/* Global resets if needed, but Tailwind handles most */
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 </style>

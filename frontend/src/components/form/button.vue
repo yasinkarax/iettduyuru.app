@@ -1,5 +1,5 @@
 <template>
-  <button :class="['button', backgroundColor]" @click="$emit('searchBus')" >
+  <button :type="type" :class="['button', backgroundColor]" @click="$emit('searchBus')" >
     <img src="@/assets/icons/bus.svg" alt="Bus Icon" class="bus-icon" />
     <span>{{buttonText}}</span>
   </button>
@@ -8,12 +8,6 @@
 import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'SearchButton',
-  data() {
-    return {
-      buttonType: 'submit'
-      //buttonText: 'Duyuruları al'
-    }
-  },
   props: {
     buttonText: {
       type: String,
@@ -22,6 +16,10 @@ export default defineComponent({
     backgroundColor: {
       type: String,
       default: 'primary'
+    },
+    type: {
+        type: String as () => "button" | "submit" | "reset",
+        default: 'button'
     }
   },
   emits: ['searchBus']

@@ -55,7 +55,7 @@ app.get('/api/announcements',
       }
 
       const textResponse = await response.text();
-      const textJSON = textResponse.match(/<GetDuyurular_jsonResult>(.*?)<\/GetDuyurular_jsonResult>/);
+      const textJSON = textResponse.match(/<GetDuyurular_jsonResult>([\s\S]*?)<\/GetDuyurular_jsonResult>/);
 
       if (textJSON && textJSON[1]) {
         const data = JSON.parse(textJSON[1]) as IettAnnouncement[];

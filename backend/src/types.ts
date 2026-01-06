@@ -1,7 +1,9 @@
 export interface IettAnnouncement {
+    HATKODU: string;
     HAT: string;
-    DUYURU: string;
+    TIP?: string;
     GUNCELLEME_SAATI?: string;
+    MESAJ: string;
 }
 
 export interface IettResponse {

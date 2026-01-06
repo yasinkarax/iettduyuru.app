@@ -1,4 +1,4 @@
-# Logs
+
 logs
 *.log
 npm-debug.log*
@@ -17,7 +17,6 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
-# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -42,3 +41,6 @@ dokuman.md
 test-api.js
 typescript.md
 learning_typescript.md
+figma.md
+git.md
+.gitignore

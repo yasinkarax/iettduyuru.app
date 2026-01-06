@@ -1,8 +1,8 @@
 
 <template>
-  <div id="announcement">
-    <div id="busId"><span>{{ busId }}</span></div>
-    <div id="busAnno">
+  <div class="announcement">
+    <div class="busId"><span>{{ busId }}</span></div>
+    <div class="busAnno">
       {{ busAnnouncement }}
     </div>
   </div>
@@ -27,7 +27,7 @@ export default defineComponent({
 </script>
 <style scoped lang="sass">
 @use '@/assets/style/_variables' as *
-#announcement
+.announcement
   display: flex
   justify-content: center
   align-items: center
@@ -39,7 +39,7 @@ export default defineComponent({
   margin: 20px 0
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4)
 
-#busId
+.busId
  width: 110px
  aspect-ratio: 1/1
  flex-shrink: 0
@@ -55,7 +55,7 @@ export default defineComponent({
  overflow: hidden
  padding: 5px
 
-#busAnno
+.busAnno
   font-size: $fontSizeContent
   color: #fff
   text-align: center
